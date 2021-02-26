@@ -21,7 +21,9 @@ public class InvalidRangeException extends Exception {
             System.out.println("Valid unity "+ unity.getNumber());
         } catch (InvalidRangeException err) {
             err.printStackTrace();
-        }
+        } finally {
+	    System.out.println("Can't set a new unity!");
+	}
     }
 }
 
@@ -37,7 +39,7 @@ class Number {
     public void
     setNumber (int number) throws InvalidRangeException {
         if (number < -9 || number > 9) {
-            throw new InvalidRangeException("Invalid range!");
+            throw new InvalidRangeException("Invalid unity!");
         }
         this.number = number;
     }
